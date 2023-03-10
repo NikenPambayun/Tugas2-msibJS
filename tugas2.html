@@ -1,0 +1,48 @@
+<script>
+    //cetak data pegawai gaji, jabatan, status
+    // Gaji pokok : manager 10 juta, asisten manager 8 juta, staff 5 juta
+    // tunjangan jabatan : 10% dari gaji pokok
+    // BPJS : 10% dari gaji pokok
+    // tunjangan keluarga bagi yang menikah : 10%
+
+    let pegawai = "Niken Pambayun";
+    let jabatan = "Manager";
+    let status = "Belum Menikah";
+
+    // Hitung Gaji Pokok
+    let gaji = 0;
+    switch(jabatan){
+        case 'Manager' : gaji = 10000000; break;
+        case 'Asisten Manager' : gaji = 8000000; break;
+        case 'Staff' : gaji = 5000000; break;
+        default : gaji = 0;
+    }
+
+    // Hitung Tunjangan Jabatan
+    let tunjangan = 0.1 * gaji;
+
+    // BPJS
+    let bpjs = 0.1 * gaji;
+
+    // Hitung Tunjangan Keluarga
+    let tunjanganKeluarga = 0;
+    if(status == 'Menikah') tunjanganKeluarga = 0.1 * gaji;
+    else tunjanganKeluarga = 0 * gaji;
+
+    // Hitung Total Gaji Pegawai
+    let totalGaji = gaji + tunjangan + bpjs + tunjanganKeluarga;
+
+    document.write("<h1 align='center'>TUGAS 2 - Data Gaji Pegawai</h1>");
+    document.write("<hr/>")
+    document.write("<h3>Data Pegawai </h3>" +
+    "Nama Pegawai : " + pegawai +
+    "<br> Jabatan : " + jabatan +
+    "<br> Status : " + status +
+    "<br><h3> Gaji Pegawai </h3>" +
+    "Gaji Pokok : " + gaji +
+    "<br> Tunjangan Jabatan : " + tunjangan +
+    "<br> BPJS : " + bpjs +
+    "<br> Tunjangan Keluarga : " + tunjanganKeluarga +
+    "<br><h3> Total Gaji yang didapatkan : " + totalGaji
+    );
+</script>
